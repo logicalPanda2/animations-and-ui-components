@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    background-color: rgb(12, 12, 12);
+    background-color: rgb(6, 6, 6);
     color: rgb(245, 245, 245);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -38,4 +38,53 @@ h1 {
 
 .sectionTitle, .navigationIds, h1 {
     user-select: none;
+}
+
+.animationFlexContainer {
+    display: flex;
+    flex-flow: row wrap;
+    height: 400px;
+}
+
+.ten-itemContainer {
+    width: 90%;
+    margin: 0 5%;
+}
+
+.eight-itemContainer {
+    width: 80%;
+    margin: 0 10%;
+}
+
+.animationFrame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 19%;
+    box-sizing: border-box;
+    margin: 0.5%;
+    background-color: rgb(20, 20, 20);
+    border-radius: 4px;
+}
+
+.eight-itemContainer > .animationFrame {
+    width: 24%;
+    margin: 0.5%;
+}
+
+.top-left-corner {
+    border-radius: 16px 4px 4px 4px;
+}
+
+.top-right-corner {
+    border-radius: 4px 16px 4px 4px;
+}
+
+.bottom-left-corner {
+    border-radius: 4px 4px 4px 16px;
+}
+
+.bottom-right-corner {
+    border-radius: 4px 4px 16px 4px;
 }
