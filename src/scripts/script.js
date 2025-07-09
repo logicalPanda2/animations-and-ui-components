@@ -6,6 +6,7 @@ const title3 = document.getElementById("microinteractions-title");
 const link3 = document.getElementById("microinteractions-link");
 const titleMarginConstant = 60;
 let isScrolling = false;
+const animationFrames = document.getElementsByClassName("animation-frame");
 
 link1.onclick = () => {
     if(!isScrolling) {
@@ -52,4 +53,22 @@ function scrollToTitle(titleElement, currentPosition = window.pageYOffset) {
             }, 4);
         }
     }
+}
+
+window.onload = () => {
+    document.getElementById("navigationBar").style.opacity = "1";
+    setTimeout(() => {
+        document.getElementById("topHeading").style.opacity = "1";
+    }, 500);
+    setTimeout(() => {
+        title1.style.opacity = "1";
+        title2.style.opacity = "1";
+        title3.style.opacity = "1";
+    }, 1000);
+    setTimeout(() => {
+        for(let i = 0; i < animationFrames.length; i++) {
+            animationFrames[i].style.transform = "none";
+            animationFrames[i].style.backgroundColor = "var(--color-secondary)";
+        }
+    }, 1250);
 }
