@@ -30,7 +30,7 @@ function scrollToTitle(titleElement, currentPosition = window.pageYOffset) {
     let newPosition;
     let elementPosition = titleElement.getBoundingClientRect().top - titleMarginConstant;
     let targetPosition = currentPosition + elementPosition;
-    let scrollSpeed = elementPosition / 50;
+    let scrollSpeed = elementPosition / 25;
     newPosition = currentPosition + scrollSpeed;
     window.scrollTo(0, newPosition);
     if(currentPosition < targetPosition) {
