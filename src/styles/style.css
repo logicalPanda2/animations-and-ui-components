@@ -1,1 +1,41 @@
-/* placeholder: all transitions and animations will be handled here  */
+:root {
+    font-size: 1rem;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(12, 12, 12);
+    color: rgb(245, 245, 245);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav > ul {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.navigationIds {
+    color: white;
+    display: inline-block;
+    margin: 1rem;
+}
+
+h1 {
+    margin: 1rem 1rem 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.sectionTitle {
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+
+.sectionTitle, .navigationIds, h1 {
+    user-select: none;
+}
