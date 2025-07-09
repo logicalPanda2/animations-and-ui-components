@@ -30,9 +30,10 @@ function scrollToTitle(titleElement, currentPosition = window.pageYOffset) {
     let newPosition;
     let elementPosition = titleElement.getBoundingClientRect().top - titleMarginConstant;
     let targetPosition = currentPosition + elementPosition;
+    let scrollSpeed = elementPosition / 50;
+    newPosition = currentPosition + scrollSpeed;
+    window.scrollTo(0, newPosition);
     if(currentPosition < targetPosition) {
-        newPosition = currentPosition + 8;
-        window.scrollTo(0, newPosition);
         if(newPosition >= targetPosition) {
             isScrolling = false;
             return 0;
@@ -42,8 +43,6 @@ function scrollToTitle(titleElement, currentPosition = window.pageYOffset) {
             }, 4);
         }
     } else {
-        newPosition = currentPosition - 8;
-        window.scrollTo(0, newPosition);
         if(newPosition <= targetPosition) {
             isScrolling = false;
             return 0;
