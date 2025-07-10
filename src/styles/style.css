@@ -5,7 +5,9 @@
     --color-default: rgb(6, 6, 6);
     --color-secondary: rgb(20, 20, 20);
     --color-font: rgb(245, 245, 245);
-    --color-transparent: rgb(0, 0, 0, 0);
+    --color-transparent: rgb(0, 0, 0, 0); 
+    --color-accent: rgb(255, 234, 77);
+    --color-accentLight: rgb(255, 240, 190);
     --border-radius-standard: 4px;
     --border-radius-smooth: 16px;
 }
@@ -103,6 +105,11 @@ h1 {
     transition: transform 1.5s ease-out, background-color 1.5s ease-out;
 }
 
+.animation-frame-child {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
 .container-eightItems > .animation-frame {
     width: 24%;
     margin: 0.5%;
@@ -122,4 +129,22 @@ h1 {
 
 .bottom-right-corner {
     border-bottom-right-radius: var(--border-radius-smooth);
+}
+
+.floating-action-button {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-smooth);
+    font-size: var(--font-xxl);
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-font);
+    box-shadow: 0 0 5px 0 var(--color-default);
+    transition: background-color 300ms linear, opacity 1s ease-out, transform 150ms linear;
+}
+
+.floating-action-button:hover {
+    background-color: var(--color-accentLight);
 }
