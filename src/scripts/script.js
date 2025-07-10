@@ -6,6 +6,7 @@ const title3 = document.getElementById("microinteractions-title");
 const link3 = document.getElementById("microinteractions-link");
 const titleMarginConstant = 60;
 let isScrolling = false;
+let frameSequenceInterval;
 const animationFrames = document.getElementsByClassName("animation-frame");
 
 link1.onclick = () => {
@@ -67,12 +68,13 @@ window.onload = () => {
     }, 1000);
     setTimeout(() => {
         let i = 0;
-        setInterval(() => {
+        frameSequenceInterval = setInterval(() => {
             animationFrames[i].style.transform = "none";
             animationFrames[i].style.backgroundColor = "var(--color-secondary)";
-            if(i < animationFrames.length) {
+            if(i < animationFrames.length - 1) {
                 i++
             } else {
+                clearInterval(frameSequenceInterval);
                 return 0;
             }
         }, 80);
