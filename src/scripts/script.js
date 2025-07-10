@@ -66,9 +66,15 @@ window.onload = () => {
         title3.style.opacity = "1";
     }, 1000);
     setTimeout(() => {
-        for(let i = 0; i < animationFrames.length; i++) {
+        let i = 0;
+        setInterval(() => {
             animationFrames[i].style.transform = "none";
             animationFrames[i].style.backgroundColor = "var(--color-secondary)";
-        }
+            if(i < animationFrames.length) {
+                i++
+            } else {
+                return 0;
+            }
+        }, 80);
     }, 1250);
 }
