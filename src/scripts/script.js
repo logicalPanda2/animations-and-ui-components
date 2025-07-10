@@ -99,8 +99,9 @@ window.onload = () => {
 
 fab.onclick = () => {
     clearTimeout(fabTimeout);
-    fab.style.transform = "scale(1.1)";
+    fab.style.transform = "none";
+    fab.style.transform = "scale(1.05)";
     fabTimeout = setTimeout(() => {
         fab.style.transform = "none";
-    }, 150);
+    }, 100);
 }
