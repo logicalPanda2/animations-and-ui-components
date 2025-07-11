@@ -5,6 +5,8 @@ const link2 = document.getElementById("general-animations-link");
 const title3 = document.getElementById("microinteractions-title");
 const link3 = document.getElementById("microinteractions-link");
 const fab = document.getElementById("floating-action-button");
+const switchButtonTrack = document.getElementById("button-track");
+const switchButtonThumb = document.getElementById("button-thumb");
 const titleMarginConstant = 60;
 let isScrolling = false;
 let frameSequenceInterval;
@@ -104,4 +106,18 @@ fab.onclick = () => {
     fabTimeout = setTimeout(() => {
         fab.style.transform = "none";
     }, 100);
+}
+
+let switchButtonState = false;
+switchButtonTrack.onclick = () => {
+    if(!switchButtonState) {
+        switchButtonThumb.style.marginLeft = "48px";
+        switchButtonTrack.style.backgroundColor = "rgb(5, 95, 168)";
+        switchButtonThumb.style.backgroundColor = "rgb(139, 192, 232)";
+    } else {
+        switchButtonThumb.style.marginLeft = "0px";
+        switchButtonTrack.style.backgroundColor = "rgb(61, 61, 61)";
+        switchButtonThumb.style.backgroundColor = "grey";
+    }
+    switchButtonState = !switchButtonState;
 }
