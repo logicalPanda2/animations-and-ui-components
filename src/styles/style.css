@@ -204,3 +204,22 @@ h1 {
     border-radius: 100px;
     transition: margin-left 400ms ease, background-color 400ms ease;
 }
+
+.slider {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 120px;  
+    background: transparent; 
+    height: 3px;
+    background: linear-gradient(to right, rgb(139, 192, 232) 0%, rgb(139, 192, 232) 50%, white 50%, white 100%);
+    border-radius: var(--border-radius-standard);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(139, 192, 232);
+    border-radius: 100px;
+}

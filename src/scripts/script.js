@@ -7,6 +7,7 @@ const link3 = document.getElementById("microinteractions-link");
 const fab = document.getElementById("floating-action-button");
 const switchButtonTrack = document.getElementById("button-track");
 const switchButtonThumb = document.getElementById("button-thumb");
+const slider = document.getElementById("slider");
 const titleMarginConstant = 60;
 let isScrolling = false;
 let frameSequenceInterval;
@@ -101,16 +102,17 @@ window.onload = () => {
 
 fab.onclick = () => {
     clearTimeout(fabTimeout);
-    fab.style.transform = "none";
+    fab.style.transform = "scale(1)";
     fab.style.transform = "scale(1.05)";
     fabTimeout = setTimeout(() => {
-        fab.style.transform = "none";
+        fab.style.transform = "scale(1)";
     }, 100);
 }
 
 let switchButtonState = false;
 switchButtonTrack.onclick = () => {
-    if(!switchButtonState) {
+    switchButtonState = !switchButtonState;
+    if(switchButtonState) {
         switchButtonThumb.style.marginLeft = "48px";
         switchButtonTrack.style.backgroundColor = "rgb(5, 95, 168)";
         switchButtonThumb.style.backgroundColor = "rgb(139, 192, 232)";
@@ -119,5 +121,9 @@ switchButtonTrack.onclick = () => {
         switchButtonTrack.style.backgroundColor = "rgb(61, 61, 61)";
         switchButtonThumb.style.backgroundColor = "grey";
     }
-    switchButtonState = !switchButtonState;
+}
+
+slider.oninput = () => {
+    let value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+    slider.style.background = `linear-gradient(to right, rgb(139, 192, 232) 0%, rgb(139, 192, 232) ${value}%, white ${value}%, white 100%)`;
 }
