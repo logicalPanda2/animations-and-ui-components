@@ -264,3 +264,58 @@ h1 {
 .card:hover {
     transform: translateY(-10px);
 }
+
+.ring {
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.center {
+    width: 65px;
+    height: 65px;
+    border: 1px solid gray;
+    border-radius: 100px;
+    background-color: var(--color-secondary);
+    z-index: 2;
+}
+
+.spinner {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-color: gray;
+    transform: rotateZ(45deg);
+    top: -53px;
+    left: 0px;
+    animation: spinner 2s linear infinite;
+}
+
+@keyframes spinner {
+    25% {
+        transform: rotateZ(135deg);
+        top: 0;
+        left: 24px;
+    }
+    50% {
+        transform: rotateZ(225deg);
+        top: 53px;
+        left: 0;
+    }
+    75% {
+        transform: rotateZ(315deg);
+        top: 0;
+        left: -24px;
+    }
+    100% {
+        transform: rotateZ(405deg);
+        top: -53px;
+        left: 0;
+    }
+}
