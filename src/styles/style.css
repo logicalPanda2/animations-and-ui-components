@@ -4,8 +4,15 @@
     --font-xxl: 2.5rem;
     --color-default: rgb(6, 6, 6);
     --color-secondary: rgb(20, 20, 20);
+    --color-tertiary: rgb(61, 61, 61);
     --color-font: rgb(245, 245, 245);
-    --color-transparent: rgb(0, 0, 0, 0); 
+    --color-transparent: rgba(0, 0, 0, 0);
+    --color-accent: rgb(255, 234, 77);
+    --color-accent-light: rgb(255, 240, 190);
+    --color-accent-secondary: rgb(139, 192, 232);
+    --color-accent-secondary-dark: rgb(15, 60, 95);
+    --color-semantic-positive: rgb(23, 218, 23);
+    --color-semantic-negative: rgb(200, 27, 27);
     --border-radius-standard: 4px;
     --border-radius-smooth: 16px;
 }
@@ -141,14 +148,14 @@ h1 {
     justify-content: center;
     border-radius: var(--border-radius-smooth);
     font-size: var(--font-xxl);
-    background-color: rgb(255, 234, 77);
+    background-color: var(--color-accent);
     border: none;
     box-shadow: 0 0 5px 0 var(--color-default);
     transition: background-color 300ms linear, opacity 1s ease-out, transform 150ms linear;
 }
 
 .floating-action-button:hover {
-    background-color: rgb(255, 240, 190);
+    background-color: var(--color-accent-light);
 }
 
 .segmented-button {
@@ -165,7 +172,7 @@ h1 {
     justify-content: center;
     flex: 1;
     height: 100%;
-    background-color: rgb(139, 192, 232);
+    background-color: var(--color-accent-secondary);
     border: none;
     border-radius: var(--border-radius-standard);
     box-shadow: 0 0 5px 0 var(--color-default);
@@ -185,13 +192,13 @@ h1 {
 }
 
 .segment:hover {
-    background-color: rgb(15, 60, 95);
+    background-color: var(--color-accent-secondary-dark);
 }
 
 .switch-button {
     width: 100px;
     height: 50px;
-    background-color: rgb(61, 61, 61);
+    background-color: var(--color-tertiary);
     border: none;
     border-radius: 100px;
     transition: background-color 400ms ease;
@@ -211,7 +218,7 @@ h1 {
     width: 120px;  
     background: transparent; 
     height: 3px;
-    background: linear-gradient(to right, rgb(139, 192, 232) 0%, rgb(139, 192, 232) 50%, white 50%, white 100%);
+    background: linear-gradient(to right, var(--color-accent-secondary) 0%, var(--color-accent-secondary) 50%, white 50%, white 100%);
     border-radius: var(--border-radius-standard);
 }
 
@@ -220,7 +227,7 @@ h1 {
     appearance: none;
     width: 12px;
     height: 12px;
-    background-color: rgb(139, 192, 232);
+    background-color: var(--color-accent-secondary);
     border-radius: 100px;
 }
 
@@ -251,7 +258,7 @@ h1 {
     width: 30px;
     height: 50px;
     border-radius: var(--border-radius-standard);
-    background-color: rgb(255, 234, 77);
+    background-color: var(--color-accent);
     box-shadow: 0 0 5px 0 var(--color-default);
     transition: transform 300ms ease-out;
     display: flex;
@@ -356,35 +363,35 @@ input[type="text"] {
 }
 
 .feedback-positive {
-    box-shadow: 0 0 4px 2px rgb(23, 218, 23);
+    box-shadow: 0 0 4px 2px var(--color-semantic-positive);
     animation: pulse-box-shadow-green 1.5s ease-in-out infinite;
 }
 
 .feedback-negative {
-    box-shadow: 0 0 4px 2px rgb(200, 27, 27);
+    box-shadow: 0 0 4px 2px var(--color-semantic-negative);
     animation: pulse-box-shadow-red 1.5s ease-in-out infinite;
 }
 
 @keyframes pulse-box-shadow-green {
     0% {
-        box-shadow: 0 0 4px 2px rgb(23, 218, 23);
+        box-shadow: 0 0 4px 2px var(--color-semantic-positive);
     }
     50% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 var(--color-transparent);
     }
     100% {
-        box-shadow: 0 0 4px 2px rgb(23, 218, 23);
+        box-shadow: 0 0 4px 2px var(--color-semantic-positive);
     }
 }
 
 @keyframes pulse-box-shadow-red {
     0% {
-        box-shadow: 0 0 4px 2px rgb(200, 27, 27);
+        box-shadow: 0 0 4px 2px var(--color-semantic-negative);
     }
     50% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 var(--color-transparent);
     }
     100% {
-        box-shadow: 0 0 4px 2px rgb(200, 27, 27);
+        box-shadow: 0 0 4px 2px var(--color-semantic-negative);
     }
 }

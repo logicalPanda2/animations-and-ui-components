@@ -115,15 +115,15 @@ switchButtonTrack.onclick = () => {
     if(switchButtonState) {
         switchButtonThumb.style.marginLeft = "48px";
         switchButtonTrack.style.backgroundColor = "rgb(5, 95, 168)";
-        switchButtonThumb.style.backgroundColor = "rgb(139, 192, 232)";
+        switchButtonThumb.style.backgroundColor = "var(--color-accent-secondary)";
     } else {
         switchButtonThumb.style.marginLeft = "0px";
-        switchButtonTrack.style.backgroundColor = "rgb(61, 61, 61)";
+        switchButtonTrack.style.backgroundColor = "var(--color-tertiary)";
         switchButtonThumb.style.backgroundColor = "grey";
     }
 }
 
 slider.oninput = () => {
     let value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
-    slider.style.background = `linear-gradient(to right, rgb(139, 192, 232) 0%, rgb(139, 192, 232) ${value}%, white ${value}%, white 100%)`;
+    slider.style.background = `linear-gradient(to right, var(--color-accent-secondary) 0%, var(--color-accent-secondary) ${value}%, white ${value}%, white 100%)`;
 }
