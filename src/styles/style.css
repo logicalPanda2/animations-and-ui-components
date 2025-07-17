@@ -963,3 +963,42 @@ h1 {
     background-color: white;
     font-weight: 600;
 }
+
+@property --neon-gradient-1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: black;
+}
+
+@property --neon-gradient-2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: black;
+}
+
+.button-effect-3-container {
+    width: 122px;
+    height: 52px;
+    background: linear-gradient(to top right, rgb(37, 0, 204), rgb(169, 0, 203));
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-hover.btn-effect-3 {
+    --neon-gradient-1: var(--color-default);
+    --neon-gradient-2: var(--color-default);
+    border-radius: 100px;
+    background: linear-gradient(to top right, var(--neon-gradient-1), var(--neon-gradient-2));
+    border: 1px solid white;
+    color: white;
+    box-shadow: 0 0 0 0 var(--color-transparent);
+    transition: --neon-gradient-1 350ms ease-out, --neon-gradient-2 350ms ease-out, box-shadow 350ms ease-out;
+}
+
+.button-hover.btn-effect-3:hover {
+    --neon-gradient-1: rgb(37, 0, 204);
+    --neon-gradient-2: rgb(169, 0, 203);
+    box-shadow: 0 0 8px 0 rgb(37, 0, 204);
+}
