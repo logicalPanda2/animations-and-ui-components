@@ -19,6 +19,8 @@ const taskBox = document.getElementById("task-container");
 const taskContent = document.getElementById("task-content");
 const taskCheckbox = document.getElementById("task-checkbox");
 const checkmark = document.getElementById("checkmark");
+const passwordToggleInput = document.getElementById("password-toggle-input");
+const passwordToggle = document.getElementById("password-toggle");
 
 link1.onclick = () => {
     if(!isScrolling) {
@@ -146,4 +148,16 @@ taskCheckbox.onclick = () => {
             }, 300);
         }, 500);
     }, 300);
+}
+
+let isPasswordVisible = false;
+passwordToggle.onclick = () => {
+    isPasswordVisible = !isPasswordVisible;
+    if(isPasswordVisible) {
+        passwordToggle.innerHTML = "X";
+        passwordToggleInput.type = "text";
+    } else {
+        passwordToggle.innerHTML = "O";
+        passwordToggleInput.type = "password";
+    }
 }
