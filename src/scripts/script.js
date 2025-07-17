@@ -15,6 +15,10 @@ let frameChildrenSequenceInterval;
 let fabTimeout;
 const animationFrames = document.getElementsByClassName("animation-frame");
 const animationFrameChildren = document.getElementsByClassName("animation-frame-child");
+const taskBox = document.getElementById("task-container");
+const taskContent = document.getElementById("task-content");
+const taskCheckbox = document.getElementById("task-checkbox");
+const checkmark = document.getElementById("checkmark");
 
 link1.onclick = () => {
     if(!isScrolling) {
@@ -126,4 +130,20 @@ switchButtonTrack.onclick = () => {
 slider.oninput = () => {
     let value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
     slider.style.background = `linear-gradient(to right, var(--color-accent-secondary) 0%, var(--color-accent-secondary) ${value}%, white ${value}%, white 100%)`;
+}
+
+taskCheckbox.onclick = () => {
+    taskCheckbox.style.animation = "stagger 240ms linear";
+    setTimeout(() => {
+        checkmark.style.opacity = "1";
+        taskContent.style.color = "var(--color-secondary)";
+        taskBox.style.transform = "scale(0.75)";
+        taskBox.style.opacity = "0.5";
+        setTimeout(() => {
+            taskContent.style.textDecoration = "line-through";
+            setTimeout(() => {
+                taskBox.style.bottom = "30%"; 
+            }, 300);
+        }, 500);
+    }, 300);
 }

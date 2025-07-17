@@ -864,3 +864,68 @@ input[type="text"] {
     --custom-color-gradient: var(--color-accent);
     --custom-color-gradient-2: rgb(207, 162, 0);
 }
+
+.task-container {
+    position: relative;
+    bottom: 0;
+    width: 150px;
+    height: 40px;
+    background-color: var(--color-tertiary);
+    border-radius: var(--border-radius-standard);
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform 350ms ease-out, opacity 350ms ease-out, bottom 400ms ease-in-out;
+}
+
+.task-content, .task-checkbox-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-content {
+    width: 70%;
+    transition: color, 350ms ease-in;
+}
+
+.task-checkbox-container {
+    width: 30%;
+}
+
+.task-checkbox {
+    width: 60%;
+    height: 60%;
+    background-color: gray;
+    border: none;
+    border-radius: var(--border-radius-standard);
+    padding: 0;
+    margin: 0;
+}
+
+.checkmark {
+    position: relative;
+    top: -135%;
+    font-size: 3rem;
+    color: var(--color-default);
+    opacity: 0;
+    transition: opacity 350ms ease-in;
+}
+
+@keyframes stagger {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(15deg);
+    }
+    50% {
+        transform: rotateZ(-15deg);
+    }
+    75% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
