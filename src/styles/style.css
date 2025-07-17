@@ -759,3 +759,108 @@ input[type="text"] {
 .slide2-knock-down {
     animation: knock-down 2.5s 1.3s linear infinite;
 }
+
+.link-hover {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+}
+
+.hover-effect-1 {
+    box-shadow: 0 0 0 0 inset var(--color-transparent);
+    transition: box-shadow 350ms linear, color 350ms linear;
+}
+
+.hover-effect-1:hover {
+    box-shadow: 150px 0 0 0 inset var(--color-accent-secondary);
+    color: black;
+}
+
+.hover-effect-2 {
+    width: auto;
+    background-color: white;
+    box-shadow: 0 20px 0 0 inset var(--color-secondary);
+    transition: box-shadow 350ms linear;
+}
+
+.hover-effect-2:hover {
+    box-shadow: 0 17px 0 0 inset var(--color-secondary);
+}
+
+.plain-text {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 0%;
+    opacity: 0;
+    width: 120px;
+    background-color: var(--color-tertiary);
+    border-radius: var(--border-radius-standard);
+    padding: 5px 0;
+    text-align: center;
+    transition: opacity 350ms ease-in;
+}
+
+.tooltip:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    border: 8px solid var(--color-tertiary);
+    border-color: var(--color-tertiary) var(--color-transparent) var(--color-transparent) var(--color-transparent);
+}
+
+.plain-text:hover .tooltip {
+    opacity: 1;
+}
+
+.button-hover {
+    width: 120px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: var(--border-radius-standard);
+}
+
+@property --custom-color-gradient {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: black;
+}
+
+@property --custom-color-gradient-2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: black;
+}
+
+.btn-effect-1 {
+    --custom-color-gradient: var(--color-accent-secondary-dark);
+    background: linear-gradient(to bottom right, var(--color-accent-secondary) 15%, var(--custom-color-gradient));
+    color: white;
+    transition: --custom-color-gradient 350ms linear, color 350ms linear;
+}
+
+.btn-effect-1:hover {
+    --custom-color-gradient: var(--color-accent-secondary);
+    color: black;
+}
+
+.btn-effect-2 {
+    --custom-color-gradient: var(--color-accent-light);
+    --custom-color-gradient-2: var(--color-accent);
+    background: linear-gradient(to bottom right, var(--custom-color-gradient), var(--custom-color-gradient-2));
+    color: black;
+    transition: --custom-color-gradient 350ms linear, --custom-color-gradient-2 350ms linear;
+}
+
+.btn-effect-2:hover {
+    --custom-color-gradient: var(--color-accent);
+    --custom-color-gradient-2: rgb(207, 162, 0);
+}
