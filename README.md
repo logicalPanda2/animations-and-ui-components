@@ -15,7 +15,7 @@ A compact, fully responsive site showcasing various UI/UX components and animati
 ## Installation
 Copy this repository's link: 
 ```
-https://github.com/logicalPanda2/animations-and-components.git
+https://github.com/logicalPanda2/animations-and-ui-components.git
 ```
 Then, in Git Bash, navigate to the directory you want the cloned directory to be in:
 ```
@@ -23,7 +23,7 @@ $ cd example_directory
 ```
 Then, type in the command `git clone` along with the copied link:
 ```
-$ git clone https://github.com/logicalPanda2/animations-and-components.git
+$ git clone https://github.com/logicalPanda2/animations-and-ui-components.git
 ```
 Wait until all processes are done, indicating the repository is successfully cloned.
 
@@ -37,7 +37,7 @@ Navigate to the main.html file in the `src` folder, then open it directly in you
 
 ## Project Structure
 ```
-/various-animations (root)
+/animations-and-ui-components (root)
     /images (contains screenshots of final website)
     /src 
         /scripts
