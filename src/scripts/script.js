@@ -4,7 +4,6 @@ const title2 = document.getElementById("general-animations-title");
 const link2 = document.getElementById("general-animations-link");
 const title3 = document.getElementById("microinteractions-title");
 const link3 = document.getElementById("microinteractions-link");
-const fab = document.getElementById("floating-action-button");
 const switchButtonTrack = document.getElementById("button-track");
 const switchButtonThumb = document.getElementById("button-thumb");
 const slider = document.getElementById("slider");
@@ -12,7 +11,6 @@ const titleMarginConstant = 60;
 let isScrolling = false;
 let frameSequenceInterval;
 let frameChildrenSequenceInterval;
-let fabTimeout;
 const animationFrames = document.getElementsByClassName("animation-frame");
 const animationFrameChildren = document.getElementsByClassName("animation-frame-child");
 const taskBox = document.getElementById("task-container");
@@ -104,15 +102,6 @@ window.onload = () => {
             }
         }, 80)
     }, 2500);
-}
-
-fab.onclick = () => {
-    clearTimeout(fabTimeout);
-    fab.style.transform = "scale(1)";
-    fab.style.transform = "scale(1.05)";
-    fabTimeout = setTimeout(() => {
-        fab.style.transform = "scale(1)";
-    }, 100);
 }
 
 let switchButtonState = false;
